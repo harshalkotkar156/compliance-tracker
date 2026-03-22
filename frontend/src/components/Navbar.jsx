@@ -14,40 +14,28 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
 
-          {/* Logo */}
           <Link to="/" className="flex items-center gap-2.5 group">
-            <div className="w-8 h-8 bg-brand-600 rounded-lg flex items-center
-                            justify-center group-hover:bg-brand-700 transition-colors">
+            <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center group-hover:bg-indigo-700 transition-colors">
               <ShieldCheck size={16} className="text-white" />
             </div>
             <div className="leading-tight">
-              <span className="font-bold text-gray-900 text-sm block">
-                LedgersCFO
-              </span>
-              <span className="text-xs text-gray-400 block -mt-0.5">
-                Compliance Tracker
-              </span>
+              <span className="font-bold text-gray-900 text-sm block">LedgersCFO</span>
+              <span className="text-xs text-gray-400 block -mt-0.5">Compliance Tracker</span>
             </div>
           </Link>
 
-          {/* Nav links */}
           <nav className="flex items-center gap-1">
             {links.map(({ to, label, icon: Icon }) => {
-              const active =
-                to === "/"
-                  ? pathname === "/"
-                  : pathname.startsWith(to)
-
+              const active = to === "/" ? pathname === "/" : pathname.startsWith(to)
               return (
                 <Link
                   key={to}
                   to={to}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm
-                              font-medium transition-all duration-150
-                              ${active
-                                ? "bg-brand-50 text-brand-700"
-                                : "text-gray-500 hover:text-gray-800 hover:bg-gray-50"
-                              }`}
+                  className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                    active
+                      ? "bg-indigo-50 text-indigo-700"
+                      : "text-gray-500 hover:text-gray-800 hover:bg-gray-50"
+                  }`}
                 >
                   <Icon size={15} />
                   {label}

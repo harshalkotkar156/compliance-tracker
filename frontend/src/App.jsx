@@ -14,7 +14,7 @@ function App() {
   return (
     <>
      <Toaster
-        position="top-right"
+        // position="top-right"
         toastOptions={{
           duration: 3500,
           style: {
@@ -22,7 +22,7 @@ function App() {
             borderRadius: "10px",
             maxWidth: "380px",
           },
-          success: { iconTheme: { primary: "#6366f1", secondary: "#fff" } },
+
         }}
       />
 
